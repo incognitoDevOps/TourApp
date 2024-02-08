@@ -18,7 +18,7 @@ Real-time weather information for the user's selected city.
 5-day weather forecast, providing insights into upcoming conditions.
 Additional weather details like humidity, wind speed, etc.
 
-<img src="./assets/imgs/weather.jpeg" alt="" width="300" height="200">
+<img src="./assets/imgs/weather.jpeg" alt="" width="200" height="400">
 
 @Attractions Screen:
 
@@ -26,7 +26,7 @@ A curated list of attractions based on the user's location or selected city.
 Detailed information about each attraction, including images, descriptions, and user reviews.
 Categories for filtering attractions, improving user navigation.
 
-<img src="./assets/imgs/attraction.jpeg" alt="" width="300" height="200">
+<img src="./assets/imgs/attraction.jpeg" alt="" width="200" height="400">
 
 @Restaurants Screen:
 
@@ -34,7 +34,7 @@ An extensive list of restaurants with details such as cuisine type, location, an
 Filters for refining restaurant options based on cuisine preferences.
 User-friendly interface with an appealing design.
 
-<img src="./assets/imgs/resturant.jpeg" alt="" width="300" height="200">
+<img src="./assets/imgs/resturant.jpeg" alt="" width="200" height="400">
 
 @Accommodation Screen:
 
@@ -42,7 +42,7 @@ Displays available accommodations with key details like name, location, and amen
 Filtering options for refining accommodation choices based on user preferences.
 Clear and organized presentation for a seamless user experience.
 
-<img src="./assets/imgs/accomodation.jpeg" alt="" width="300" height="200">
+<img src="./assets/imgs/accomodation.jpeg" alt="" width="200" height="400">
 
 @Map Integration:
 
@@ -54,7 +54,7 @@ Allows users to explore the geographical layout of their chosen destination.
 In-depth information about a specific attraction, including user reviews and comments.
 Integration with the map to visualize the attraction's location.
 
-<img src="./assets/imgs/attraction2.jpeg" alt="" width="300" height="200">
+<img src="./assets/imgs/attraction2.jpeg" alt="" width="200" height="400">
 
 @Review and Comment Section:
 
