@@ -9,8 +9,8 @@ The Tourist App is a mobile application designed to enhance the travel experienc
 Welcome screen with a visually appealing design.
 Quick access to essential features such as Weather, Attractions, Restaurants, Accommodations, and Map Integration.
 
-<img src="./assets/imgs/home1.jpeg" alt="" width="300" height="600">
-<img src="./assets/imgs/home2.jpeg" alt="" width="300" height="600">
+<img src="./assets/imgs/home1.jpeg" alt="" width="200" height="400">
+<img src="./assets/imgs/home2.jpeg" alt="" width="200" height="400">
 
 @ Weather Screen:
 
@@ -18,22 +18,31 @@ Real-time weather information for the user's selected city.
 5-day weather forecast, providing insights into upcoming conditions.
 Additional weather details like humidity, wind speed, etc.
 
+<img src="./assets/imgs/weather.jpeg" alt="" width="300" height="200">
+
 @Attractions Screen:
 
 A curated list of attractions based on the user's location or selected city.
 Detailed information about each attraction, including images, descriptions, and user reviews.
 Categories for filtering attractions, improving user navigation.
 
+<img src="./assets/imgs/attraction.jpeg" alt="" width="300" height="200">
+
 @Restaurants Screen:
 
 An extensive list of restaurants with details such as cuisine type, location, and user ratings.
 Filters for refining restaurant options based on cuisine preferences.
 User-friendly interface with an appealing design.
-Accommodation Screen:
+
+<img src="./assets/imgs/resturant.jpeg" alt="" width="300" height="200">
+
+@Accommodation Screen:
 
 Displays available accommodations with key details like name, location, and amenities.
 Filtering options for refining accommodation choices based on user preferences.
 Clear and organized presentation for a seamless user experience.
+
+<img src="./assets/imgs/accomodation.jpeg" alt="" width="300" height="200">
 
 @Map Integration:
 
@@ -44,6 +53,8 @@ Allows users to explore the geographical layout of their chosen destination.
 
 In-depth information about a specific attraction, including user reviews and comments.
 Integration with the map to visualize the attraction's location.
+
+<img src="./assets/imgs/attraction2.jpeg" alt="" width="300" height="200">
 
 @Review and Comment Section:
 
