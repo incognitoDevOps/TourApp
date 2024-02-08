@@ -9,8 +9,8 @@ The Tourist App is a mobile application designed to enhance the travel experienc
 Welcome screen with a visually appealing design.
 Quick access to essential features such as Weather, Attractions, Restaurants, Accommodations, and Map Integration.
 
-![Local Image](./assets/imgs/home1.jpeg)
-![Local Image](./assets/imgs/home2.jpeg)
+<img src="./assets/imgs/home1.jpeg" alt="" width="300" height="200">
+<img src="./assets/imgs/home2.jpeg" alt="" width="300" height="200">
 
 @ Weather Screen:
 
