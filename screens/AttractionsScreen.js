@@ -14,19 +14,21 @@ import {
 const dummyAttractionsData = [
   {
     id: "1",
-    title: "Eiffel Tower",
-    category: 'Modern',
-    description: "Iconic iron tower located in Paris, France.",
+    title: "Nyamira Manga Hills",
+    category: 'Natural',
+    description: "Iconic Manga Hills located in Nyamira, Kenya.",
     image: require("../assets/attraction1.jpeg"),
     location: { latitude: 46.858844, longitude: 5.294350 },
+    phoneNumber: '+254 111524408',
   },
   {
     id: "2",
-    title: "Machu Picchu",
-    category: 'Historical',
-    description: "Incan citadel set high in the Andes Mountains in Peru.",
+    title: "Nairobi",
+    category: 'Modern',
+    description: "Incan citadel set high in the Mau Mountains in Nairobi.",
     image: require("../assets/attraction2.jpeg"),
     location: { latitude: 30.858844, longitude: 2.294350 },
+    phoneNumber: '+254 113017255',
   },
   // Add more attractions
 ];
@@ -90,6 +92,7 @@ const AttractionsScreen = ({ navigation }) => {
         keyExtractor={(item) => item.id}
         renderItem={renderAttractionItem}
       />
+
         {/* ... other components */}
       </View>
     </ScrollView>

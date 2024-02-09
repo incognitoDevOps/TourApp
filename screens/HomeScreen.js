@@ -12,20 +12,23 @@ import {
 const dummyNewsData = [
   {
     id: "1",
-    title: "New Tourist Attraction Opened",
+    title: "Nyamira Manga Hills",
     description:
-      "Discover the latest tourist attraction in the heart of the city.",
+      "Discover the latest tourist attraction in Nyamira.",
+      image: require("../assets/attraction1.jpeg"),
   },
   {
     id: "2",
     title: "Travel Tips for an Amazing Experience",
     description:
       "Get valuable tips to make your travel experience unforgettable.",
+      image: require("../assets/attraction2.jpeg"),
   },
   {
     id: "3",
     title: "Special Discounts on Accommodations",
     description: "Explore exclusive discounts on top-rated accommodations.",
+    image: require("../assets/hotel2.jpeg"),
   },
 ];
 
@@ -118,7 +121,7 @@ const HomeScreen = ({ navigation }) => {
             <ScrollView horizontal showsHorizontalScrollIndicator={false}
               key={item.id} style={styles.newsItem}>
               <Image
-                source={require("../assets/destination1.jpeg")}
+                source={item.image}
                 style={{ width: 120, height: 100, borderRadius: 8, marginRight:15 }}
               />
               <View>

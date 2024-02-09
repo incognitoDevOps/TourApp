@@ -76,3 +76,14 @@ npm install @react-navigation/native @react-navigation/stack
 npx expo install react-native-maps
 
 npm install axios
+
+# installing Expo in your project
+sudo npm install -g expo-cli
+
+# Install eas and build apk
+sudo npm install -g eas-cli
+eas build -p android
+
+# Alt
+ eas build:configure 
+ eas build -p android --profile preview

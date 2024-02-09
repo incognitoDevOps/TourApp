@@ -1,10 +1,11 @@
 // AttractionDetailsScreen.js
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import MapView, { Marker } from 'react-native-maps';
-import { View, Text,StyleSheet, Image, FlatList, TouchableOpacity, TextInput, Button, ScrollView } from 'react-native';
+import { View, Text,StyleSheet, Image, FlatList, TouchableOpacity, TextInput, Button, ScrollView,Linking } from 'react-native';
 
 const AttractionDetailsScreen = ({ route }) => {
-  const { title, description, image,location } = route.params;
+  const { title, description, image,location,phoneNumber } = route.params;
   const [rating, setRating] = useState(0);
   const [review, setReview] = useState('');
   const [reviews, setReviews] = useState([]);
@@ -18,6 +19,13 @@ const AttractionDetailsScreen = ({ route }) => {
     setReview('');
   };
 
+  const handleWhatsAppPress = () => {
+    const whatsappURL = `https://wa.me/${phoneNumber}`;
+
+    Linking.openURL(whatsappURL).catch((err) =>
+      console.error('Error opening WhatsApp link', err)
+    );
+  };
 
   return (
     <ScrollView>
@@ -36,13 +44,14 @@ const AttractionDetailsScreen = ({ route }) => {
     >
       <Marker coordinate={{ latitude: location.latitude, longitude: location.longitude }} title={title} />
     </MapView>
-    <Text style={styles.sectionTitle}>User Reviews</Text>
+    {/* <Text style={styles.sectionTitle}>User Reviews</Text>
     {reviews.map((userReview, index) => (
       <View key={index} style={styles.reviewContainer}>
         <Text style={styles.reviewText}>{`Rating: ${userReview.rating}`}</Text>
         <Text style={styles.reviewText}>{userReview.review}</Text>
       </View>
     ))}
+   
     <Text style={styles.sectionTitle}>Leave a Review</Text>
     <View style={styles.reviewInputContainer}>
       <TextInput
@@ -60,13 +69,21 @@ const AttractionDetailsScreen = ({ route }) => {
         onChangeText={(text) => setReview(text)}
       />
       <Button title="Submit Review" onPress={handleReviewSubmit} />
-    </View>
+    </View> */}
+
+    <TouchableOpacity onPress={handleWhatsAppPress}>
+      <View style={styles.button}>
+        <Text style={styles.buttonText}>WhatsApp</Text>
+      </View>
+    </TouchableOpacity>
+
   </View>
   </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+
     container: {
       flex: 1,
       padding: 16,
@@ -112,6 +129,17 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       borderRadius: 8,
       marginRight: 8,
+    },
+    button: {
+      backgroundColor: "#25D366",
+      padding: 16,
+      borderRadius: 8,
+      margin: 8,
+    },
+    buttonText: {
+      color: "#fff",
+      fontSize: 18,
+      textAlign: "center",
     },
   });
 
