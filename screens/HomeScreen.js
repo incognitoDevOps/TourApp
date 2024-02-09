@@ -13,26 +13,116 @@ const dummyNewsData = [
   {
     id: "1",
     title: "Nyamira Manga Hills",
-    description:
+    describe:
       "Discover the latest tourist attraction in Nyamira.",
       image: require("../assets/attraction1.jpeg"),
+      image2: require("../assets/hotel1.jpeg"),
+    image3: require("../assets/hotel1.jpeg"),
+    description:`Welcome to the enchanting Nyamira Manga Hills, a captivating tourist attraction nestled in the heart of Nyamira County, Kenya. Immerse yourself in the breathtaking beauty of this picturesque destination, where lush greenery, rolling hills, and vibrant landscapes create a mesmerizing tapestry of nature's wonders.
+
+      Nyamira Manga Hills offers a serene retreat for nature enthusiasts and adventure seekers alike. As you ascend the hills, you'll be treated to panoramic views that stretch as far as the eye can see. The undulating terrain, adorned with tea plantations and indigenous flora, adds to the allure of this idyllic setting.
+
+      `,
+      description2:`
+      The air is crisp and invigorating, making it the perfect escape from the hustle and bustle of everyday life. Whether you're an avid hiker or simply seeking a peaceful getaway, Nyamira Manga Hills has something for everyone. Hike along well-maintained trails, where every step unveils new vistas and the opportunity to connect with the unspoiled beauty of the Kenyan countryside.
+      
+      The charm of Nyamira Manga Hills isn't limited to its natural splendor; the local culture adds an extra layer of richness to the experience. Engage with the warm and welcoming communities that call this region home, and discover the traditions and customs that have been passed down through generations.
+      `,
+      description3:`
+     For those looking to capture the magic of Nyamira Manga Hills, don't forget your camera. Sunrise and sunset paint the hills in hues of gold and pink, creating a captivating spectacle that's sure to leave a lasting impression.`,
   },
   {
     id: "2",
     title: "Travel Tips for an Amazing Experience",
-    description:
+    describe:
       "Get valuable tips to make your travel experience unforgettable.",
       image: require("../assets/attraction2.jpeg"),
-  },
+      image2: require("../assets/hotel1.jpeg"),
+      image3: require("../assets/hotel1.jpeg"),
+      description:`Welcome to the enchanting Nyamira Manga Hills, a captivating tourist attraction nestled in the heart of Nyamira County, Kenya. Immerse yourself in the breathtaking beauty of this picturesque destination, where lush greenery, rolling hills, and vibrant landscapes create a mesmerizing tapestry of nature's wonders.
+  
+        Nyamira Manga Hills offers a serene retreat for nature enthusiasts and adventure seekers alike. As you ascend the hills, you'll be treated to panoramic views that stretch as far as the eye can see. The undulating terrain, adorned with tea plantations and indigenous flora, adds to the allure of this idyllic setting.
+  
+        `,
+        description2:`
+        The air is crisp and invigorating, making it the perfect escape from the hustle and bustle of everyday life. Whether you're an avid hiker or simply seeking a peaceful getaway, Nyamira Manga Hills has something for everyone. Hike along well-maintained trails, where every step unveils new vistas and the opportunity to connect with the unspoiled beauty of the Kenyan countryside.
+        
+        The charm of Nyamira Manga Hills isn't limited to its natural splendor; the local culture adds an extra layer of richness to the experience. Engage with the warm and welcoming communities that call this region home, and discover the traditions and customs that have been passed down through generations.
+        `,
+        description3:`
+       For those looking to capture the magic of Nyamira Manga Hills, don't forget your camera. Sunrise and sunset paint the hills in hues of gold and pink, creating a captivating spectacle that's sure to leave a lasting impression.`,
+    },
   {
     id: "3",
     title: "Special Discounts on Accommodations",
-    description: "Explore exclusive discounts on top-rated accommodations.",
+    describe: "Explore exclusive discounts on top-rated accommodations.",
     image: require("../assets/hotel2.jpeg"),
+    image2: require("../assets/hotel1.jpeg"),
+    image3: require("../assets/hotel1.jpeg"),
+    description:`Welcome to the enchanting Nyamira Manga Hills, a captivating tourist attraction nestled in the heart of Nyamira County, Kenya. Immerse yourself in the breathtaking beauty of this picturesque destination, where lush greenery, rolling hills, and vibrant landscapes create a mesmerizing tapestry of nature's wonders.
+
+      Nyamira Manga Hills offers a serene retreat for nature enthusiasts and adventure seekers alike. As you ascend the hills, you'll be treated to panoramic views that stretch as far as the eye can see. The undulating terrain, adorned with tea plantations and indigenous flora, adds to the allure of this idyllic setting.
+
+      `,
+      description2:`
+      The air is crisp and invigorating, making it the perfect escape from the hustle and bustle of everyday life. Whether you're an avid hiker or simply seeking a peaceful getaway, Nyamira Manga Hills has something for everyone. Hike along well-maintained trails, where every step unveils new vistas and the opportunity to connect with the unspoiled beauty of the Kenyan countryside.
+      
+      The charm of Nyamira Manga Hills isn't limited to its natural splendor; the local culture adds an extra layer of richness to the experience. Engage with the warm and welcoming communities that call this region home, and discover the traditions and customs that have been passed down through generations.
+      `,
+      description3:`
+     For those looking to capture the magic of Nyamira Manga Hills, don't forget your camera. Sunrise and sunset paint the hills in hues of gold and pink, creating a captivating spectacle that's sure to leave a lasting impression.`,
+  },
+];
+
+
+const dummyFeaturesData = [
+  {
+    id: "1",
+    county: "Narok",
+    country:"Kenya",
+    description:
+      "Discover the latest tourist attraction in Masai Mara.",
+      image: require("../assets/destination1.jpeg"),
+  },
+  {
+    id: "2",
+    county: "Nairobi",
+    country:"Kenya",
+    description:
+      "Discover the latest tourist attraction in Masai Mara.",
+      image: require("../assets/destination2.jpeg"),
+  },
+  {
+    id: "3",
+    county: "Muranga",
+    country:"Kenya",
+    description:
+      "Discover the latest tourist attraction in Masai Mara.",
+      image: require("../assets/destination3.jpeg"),
+  },
+  {
+    id: "4",
+    county: "Mombasa",
+    country:"Kenya",
+    description:
+      "Discover the latest tourist attraction in Masai Mara.",
+      image: require("../assets/destination4.jpeg"),
+  },
+  {
+    id: "5",
+    county: "Narok",
+    country:"Kenya",
+    description:
+      "Discover the latest tourist attraction in Masai Mara.",
+      image: require("../assets/destination5.jpeg"),
   },
 ];
 
 const HomeScreen = ({ navigation }) => {
+  const navigateToDetails = (NewsDetails) => {
+    navigation.navigate('NewsDetails', NewsDetails);
+  };
+
   return (
     <ScrollView>
       <View>
@@ -74,41 +164,19 @@ const HomeScreen = ({ navigation }) => {
 
         {/* Featured Destinations: */}
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          <View style={styles.featuredItem}>
-            <Image
-              source={require("../assets/destination1.jpeg")}
-              style={{ width: 150, height: 100, borderRadius: 8 }}
-            />
-            <Text style={{ margin: 8 }}>Masai Mara, Kenya</Text>
-          </View>
-          <View style={styles.featuredItem}>
-            <Image
-              source={require("../assets/destination2.jpeg")}
-              style={{ width: 150, height: 100, borderRadius: 8 }}
-            />
-            <Text style={{ margin: 8 }}>Nairobi, Kenya</Text>
-          </View>
-          <View style={styles.featuredItem}>
-            <Image
-              source={require("../assets/destination3.jpeg")}
-              style={{ width: 150, height: 100, borderRadius: 8 }}
-            />
-            <Text style={{ margin: 8 }}>Mt. Kenya, Kenya</Text>
-          </View>
-          <View style={styles.featuredItem}>
-            <Image
-              source={require("../assets/destination4.jpeg")}
-              style={{ width: 150, height: 100, borderRadius: 8 }}
-            />
-            <Text style={{ margin: 8 }}>Mombasa, Kenya</Text>
-          </View>
-          <View style={styles.featuredItem}>
-            <Image
-              source={require("../assets/destination5.jpeg")}
-              style={{ width: 150, height: 100, borderRadius: 8 }}
-            />
-            <Text style={{ margin: 8 }}>Narok, Kenya</Text>
-          </View>
+        {dummyFeaturesData.map((item) => (
+            <View horizontal showsHorizontalScrollIndicator={false}
+              key={item.id} style={styles.featuredItem}>
+              <Image
+                source={item.image}
+                style={{ width: 150, height: 100, borderRadius: 8 }}
+              />
+              <View>
+                <Text style={{ margin: 8, fontWeight:500 }}>{item.county}, {item.country}</Text>
+              </View>
+            </View>
+          ))}
+          
           {/* Add more featured items */}
         </ScrollView>
 
@@ -118,6 +186,7 @@ const HomeScreen = ({ navigation }) => {
             Latest News
           </Text>
           {dummyNewsData.map((item) => (
+            <TouchableOpacity onPress={() => navigateToDetails(item)}>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}
               key={item.id} style={styles.newsItem}>
               <Image
@@ -126,9 +195,10 @@ const HomeScreen = ({ navigation }) => {
               />
               <View>
                 <Text style={styles.newsTitle}>{item.title}</Text>
-                <Text style={styles.newsDescription}>{item.description}</Text>
+                <Text style={styles.newsDescription}>{item.describe}</Text>
               </View>
             </ScrollView>
+            </TouchableOpacity>
           ))}
         </View>
 

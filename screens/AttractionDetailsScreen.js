@@ -73,7 +73,7 @@ const AttractionDetailsScreen = ({ route }) => {
 
     <TouchableOpacity onPress={handleWhatsAppPress}>
       <View style={styles.button}>
-        <Text style={styles.buttonText}>WhatsApp</Text>
+        <Text style={styles.buttonText}>Get Tour Guid</Text>
       </View>
     </TouchableOpacity>
 
