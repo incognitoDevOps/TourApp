@@ -75,6 +75,10 @@ npm install @react-navigation/native @react-navigation/stack
 @ ReactMap
 npx expo install react-native-maps
 
+@vectore icons
+npm install react-native-vector-icons
+
+
 npm install axios
 
 # installing Expo in your project

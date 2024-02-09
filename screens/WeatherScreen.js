@@ -1,112 +1,75 @@
-// WeatherScreen.js
-import React from 'react';
-import { View, Text, Image,StyleSheet, ScrollView,FlatList } from 'react-native';
-
-const dummyForecastData = [
-  { id: '1', day: 'Mon', temperature: 28, weatherIcon: require('../assets/sunny.png') },
-  { id: '2', day: 'Tue', temperature: 25, weatherIcon: require('../assets/cloudy.jpeg') },
-  { id: '3', day: 'Wed', temperature: 22, weatherIcon: require('../assets/rainy.png') },
-  // Add more forecast data
-];
+import React, { useState, useEffect } from 'react';
+import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 
 const WeatherScreen = () => {
-  // Dummy data (replace with actual weather data)
-  const currentWeather = {
-    temperature: 25, // in Celsius
-    weatherIcon: require('../assets/sunny.png'), // replace with actual weather icon
-    weatherDescription: 'Sunny',
+  const [location, setLocation] = useState('Kisumu'); // Default location
+  const [weatherData, setWeatherData] = useState(null);
+
+  const fetchWeatherData = async () => {
+    try {
+      const apiKey = '1952d6e552174f11b9e200321240902';
+      const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`;
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+      setWeatherData(data);
+    } catch (error) {
+      console.error('Error fetching weather data:', error);
+    }
   };
 
-  const renderForecastItem = ({ item }) => (
-    <View style={styles.forecastItem}>
-      <Text style={styles.forecastDay}>{item.day}</Text>
-      <Image source={item.weatherIcon} style={styles.forecastIcon} />
-      <Text style={styles.forecastTemperature}>{`${item.temperature}°C`}</Text>
-    </View>
-  );
-
-  const additionalWeatherDetails = {
-    humidity: 60, // in percentage
-    windSpeed: 10, // in km/h
-    // Add more details as needed
-  };
+  useEffect(() => {
+    fetchWeatherData();
+  }, [location]);
 
   return (
-   <ScrollView>
     <View style={styles.container}>
-      {/* ... (existing code) */}
-      <Text style={styles.sectionTitle}>5-Day Forecast</Text>
-      <FlatList
-        data={dummyForecastData}
-        keyExtractor={(item) => item.id}
-        renderItem={renderForecastItem}
-        horizontal
-        showsHorizontalScrollIndicator={false}
+      <Text style={styles.heading}>Weather Information</Text>
+
+      {weatherData && (
+        <>
+          <Text>Country: {weatherData.location.country}</Text>
+          <Text>County: {weatherData.location.region}</Text>
+          <Text>Wind Speed: {weatherData.current.wind_kph} kph</Text>
+          <Text>Humidity: {weatherData.current.humidity}%</Text>
+          <Text>Cloudy: {weatherData.current.cloud}%</Text>
+          <Text>Rainy: {weatherData.current.precip_mm > 0 ? 'Yes' : 'No'}</Text>
+          <Text>Sunny: {weatherData.current.is_day ? 'Yes' : 'No'}</Text>
+          <Text>Feels Like: {weatherData.current.feelslike_c} °C</Text>
+        </>
+      )}
+
+      <TextInput
+        style={styles.input}
+        placeholder="Enter location"
+        value={location}
+        onChangeText={(text) => setLocation(text)}
       />
-      <Text style={styles.sectionTitle}>Additional Details</Text>
-      <View style={styles.detailsContainer}>
-        <Text style={styles.detailLabel}>Humidity:</Text>
-        <Text style={styles.detailValue}>{`${additionalWeatherDetails.humidity}%`}</Text>
-      </View>
-      <View style={styles.detailsContainer}>
-        <Text style={styles.detailLabel}>Wind Speed:</Text>
-        <Text style={styles.detailValue}>{`${additionalWeatherDetails.windSpeed} km/h`}</Text>
-      </View>
+      <Button title="Get Weather" onPress={fetchWeatherData} />
+
+      {/* Additional styling */}
     </View>
-   </ScrollView>
-)};
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
+    flex: 1,
     justifyContent: 'center',
+    alignItems: 'center',
+    padding: 16,
   },
-  temperature: {
-    fontSize: 48,
-    fontWeight: 'bold',
-  },
-  weatherIcon: {
-    width: 100,
-    height: 100,
-    resizeMode: 'contain',
-  },
-  weatherDescription: {
-    fontSize: 20,
-    marginTop: 8,
-  },
-  sectionTitle: {
+  heading: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginTop: 16,
+    marginBottom: 16,
   },
-  forecastItem: {
-    alignItems: 'center',
-    margin: 8,
-  },
-  forecastDay: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  forecastIcon: {
-    width: 50,
-    height: 50,
-    resizeMode: 'contain',
-    marginVertical: 4,
-  },
-  forecastTemperature: {
-    fontSize: 16,
-  },
-  detailsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginVertical: 8,
-  },
-  detailLabel: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  detailValue: {
-    fontSize: 16,
+  input: {
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    marginBottom: 16,
+    padding: 8,
+    width: '100%',
   },
 });
 
