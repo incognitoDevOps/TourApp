@@ -32,7 +32,7 @@ const WeatherScreen = () => {
 
   return (
       <ImageBackground
-      source={require("../assets/weather.jpeg")} // Replace with your actual background image URL or use a local image
+      source={require("../assets/weather.jpeg")}
         style={styles.backgroundImage}
       >
           <ScrollView>
