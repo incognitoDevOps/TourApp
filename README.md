@@ -78,6 +78,10 @@ npx expo install react-native-maps
 @vectore icons
 npm install react-native-vector-icons
 
+@buttom navigation bar 
+npm install @react-navigation/native
+npm install @react-navigation/bottom-tabs
+npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context
 
 npm install axios
 
