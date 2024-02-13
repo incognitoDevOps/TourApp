@@ -25,7 +25,11 @@ const dummyAccommodationsData = [
   // Add more accommodations
 ];
 
-const AccommodationScreen = () => {
+const AccommodationScreen = ({ navigation }) => {
+
+  const navigateToBooking = (Booking) => {
+    navigation.navigate('Booking', Booking);
+  };
 
   const [selectedAmenities, setSelectedAmenities] = useState([]);
 
@@ -54,11 +58,19 @@ const AccommodationScreen = () => {
   const renderAccommodationItem = ({ item }) => (
     <ScrollView>
     <View style={styles.accommodationItem}>
-      <Image source={item.image} style={styles.accommodationImage} />
+    <Image source={item.image} style={styles.accommodationImage} />
+      <View style={styles.container}>
       <Text style={styles.accommodationName}>{item.name}</Text>
+      <TouchableOpacity onPress={() => navigateToBooking(item)}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>Book</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
       <Text style={styles.accommodationLocation}>{item.location}</Text>
       <Text style={styles.accommodationPrice}>{item.price}</Text>
       <Text style={styles.accommodationAmenities}>{item.amenities.join(', ')}</Text>
+      
     </View>
     </ScrollView>
   );
@@ -67,7 +79,6 @@ const AccommodationScreen = () => {
     <ScrollView>
     <View>
       <View style={styles.filtersContainer}>
-        {/* <Text style={styles.filterLabel}>Amenities:</Text> */}
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {amenitiesFilters.map(renderAmenityFilter)}
       </ScrollView>
@@ -87,6 +98,23 @@ const AccommodationScreen = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row', 
+    justifyContent: 'space-between',  
+    alignItems: 'center',
+    marginTop: 5,
+    // padding: 10,
+  },
+  button: {
+    backgroundColor: '#3498db',
+    padding: 10,
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    // fontSize:15,
+  },
   accommodationItem: {
     margin: 16,
     borderRadius: 8,
@@ -101,6 +129,7 @@ const styles = StyleSheet.create({
   accommodationName: {
     fontSize: 20,
     fontWeight: 'bold',
+    flex: 1,
     margin: 8,
   },
   accommodationLocation: {
