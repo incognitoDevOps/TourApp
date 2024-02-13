@@ -163,6 +163,7 @@ const HomeScreen = ({ navigation }) => {
         </TouchableOpacity>
 
         {/* Featured Destinations: */}
+        <Text style={{fontWeight:800, padding:15,fontSize:18}}>Trending Destinations</Text>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {dummyFeaturesData.map((item) => (
             <View horizontal showsHorizontalScrollIndicator={false}

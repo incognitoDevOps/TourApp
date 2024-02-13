@@ -8,7 +8,7 @@ const Booking = ({ route }) => {
   const [emailInput, setEmailInput] = useState('');
   const [phoneInput, setPhoneInput] = useState('');
 
-  const handleBookingSubmit = () => {
+  const handleBookingSubmit = async () => {
     // Send booking details to the admin dashboard or perform necessary actions
     console.log('Booking submitted:', {
       accommodationName: name,
@@ -17,17 +17,40 @@ const Booking = ({ route }) => {
       userEmail: emailInput,
       userPhone: phoneInput,
     });
+    try {
+      const response = await fetch('http://localhost:3001/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          accommodationName: name,
+          accommodationLocation: location,
+          userName: nameInput,
+          userEmail: emailInput,
+          userPhone: phoneInput,
+        }),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to submit booking');
+      }
+  
+      console.log('Booking submitted successfully');
+    } catch (error) {
+      console.error('Error submitting booking:', error);
+    }
     // You can implement the logic to send this data to your backend or admin dashboard
   };
 
   return (
     <View style={styles.container}>
       <Image source={image} style={styles.accommodationImage} />
-      <Text>Name: {name}</Text>
-      <Text>Price: {price}</Text>
-      <Text>Location: {location}</Text>
+      <Text>{name}</Text>
+      <Text>{price}</Text>
+      <Text>{location}</Text>
 
-      <Text style={styles.heading}>Booking Form</Text>
+      <Text style={styles.heading}>Your Details</Text>
       <TextInput
         style={styles.input}
         placeholder="Your Name"

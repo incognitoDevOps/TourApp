@@ -84,6 +84,11 @@ npm install axios
 # installing Expo in your project
 sudo npm install -g expo-cli
 
+@backend
+npm init -y
+npm install express nodemailer
+
+
 # Install eas and build apk
 sudo npm install -g eas-cli
 eas build -p android
