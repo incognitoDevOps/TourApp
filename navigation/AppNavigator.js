@@ -11,6 +11,7 @@ import WeatherScreen from '../screens/WeatherScreen';
 import AttractionDetailsScreen from '../screens/AttractionDetailsScreen';
 import NewsDetails from '../screens/NewsDetails';
 import Booking from '../screens/Booking';
+import TrendingScreen from '../screens/TrendingScreen';
 
 const Stack = createStackNavigator();
 
@@ -26,6 +27,7 @@ const AppNavigator = () => {
         <Stack.Screen name="AttractionDetails" component={AttractionDetailsScreen} />
         <Stack.Screen name="NewsDetails" component={NewsDetails} />
         <Stack.Screen name="Booking" component={Booking} />
+        <Stack.Screen name="TrendingScreen" component={TrendingScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

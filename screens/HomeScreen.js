@@ -122,6 +122,10 @@ const HomeScreen = ({ navigation }) => {
   const navigateToDetails = (NewsDetails) => {
     navigation.navigate('NewsDetails', NewsDetails);
   };
+  const navigateToTrendingScreen = (TrendingScreen) => {
+    navigation.navigate('TrendingScreen', TrendingScreen);
+  };
+  
 
   return (
     <ScrollView>
@@ -166,6 +170,7 @@ const HomeScreen = ({ navigation }) => {
         <Text style={{fontWeight:800, padding:15,fontSize:18}}>Trending Destinations</Text>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {dummyFeaturesData.map((item) => (
+        <TouchableOpacity onPress={() => navigateToTrendingScreen(item)}>
             <View horizontal showsHorizontalScrollIndicator={false}
               key={item.id} style={styles.featuredItem}>
               <Image
@@ -176,11 +181,11 @@ const HomeScreen = ({ navigation }) => {
                 <Text style={{ margin: 8, fontWeight:500 }}>{item.county}, {item.country}</Text>
               </View>
             </View>
+            </TouchableOpacity>
           ))}
           
           {/* Add more featured items */}
         </ScrollView>
-
         {/* News/Updates: */}
         <View style={styles.newsContainer}>
           <Text style={{ fontSize: 20, fontWeight: "bold", marginBottom: 8 }}>
