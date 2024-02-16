@@ -1,4 +1,6 @@
-export default dummyNewsData = [{
+
+  {"newsdata"[ 
+    {
     id: "1",
     title: "Nyamira Manga Hills",
     describe:
@@ -59,4 +61,6 @@ export default dummyNewsData = [{
       `,
       description3:`
      For those looking to capture the magic of Nyamira Manga Hills, don't forget your camera. Sunrise and sunset paint the hills in hues of gold and pink, creating a captivating spectacle that's sure to leave a lasting impression.`,
-  },]
+  }
+]
+  }
