@@ -1,6 +1,6 @@
 # Tourist App Overview:
 
-The Tourist App is a mobile application designed to enhance the travel experience for users. It covers various aspects of travel planning, exploration, and engagement. The app offers a user-friendly interface with multiple screens dedicated to different functionalities
+The Tourist App is a mobile application designed to enhance the travel experience for users. It covers various aspects of travel planning, exploration, and engagement. The app offers a user-friendly interface with multiple screens dedicated to different functionalities.
 
 # Key Features:
 
