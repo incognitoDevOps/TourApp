@@ -69,21 +69,21 @@ Integration with third-party APIs, such as OpenWeatherMap, for real-time weather
 
 # Installation of dependancies
 
-@ Navigation 
+# Navigation 
 npm install @react-navigation/native @react-navigation/stack
 
-@ ReactMap
+# ReactMap
 npx expo install react-native-maps
 
-@vectore icons
+# vectore icons
 npm install react-native-vector-icons
 
-@buttom navigation bar 
+# buttom navigation bar 
 npm install @react-navigation/native
 npm install @react-navigation/bottom-tabs
 npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context
 
-@sliders in reactnative
+# sliders in reactnative
 npm install react-native-swiper
 
 npm install axios
@@ -91,7 +91,7 @@ npm install axios
 # installing Expo in your project
 sudo npm install -g expo-cli
 
-@backend
+# backend
 npm init -y
 npm install express nodemailer
 
