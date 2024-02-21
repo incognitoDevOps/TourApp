@@ -1,34 +1,44 @@
 // RestaurantScreen.js
-import React from 'react';
-import { useState} from 'react';
-import { View, Text, Image, FlatList,StyleSheet, ScrollView,TouchableOpacity } from 'react-native';
+import React from "react";
+import { useState } from "react";
+import {
+  View,
+  Text,
+  Image,
+  FlatList,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 
 const dummyRestaurantsData = [
   {
-    id: '1',
-    name: 'Italian Delight',
-    cuisine: 'Italian',
-    location: 'Downtown, Rome',
+    id: "1",
+    name: "Italian Delight",
+    cuisine: "Italian",
+    location: "Downtown, Rome",
     rating: 4.5,
-    image: require('../assets/restaurant1.jpeg'),
+    image: require("../assets/restaurant1.jpeg"),
   },
   {
-    id: '2',
-    name: 'Sushi Paradise',
-    cuisine: 'Japanese',
-    location: 'Shibuya, Tokyo',
+    id: "2",
+    name: "Sushi Paradise",
+    cuisine: "Japanese",
+    location: "Shibuya, Tokyo",
     rating: 4.8,
-    image: require('../assets/restaurant2.jpeg'),
+    image: require("../assets/restaurant2.jpeg"),
   },
   // Add more restaurants
 ];
 
-const cuisineFilters = ['Italian', 'Japanese', 'Mexican', 'Thai'];
+const cuisineFilters = ["Italian", "Japanese", "Mexican", "Thai"];
 
-const RestaurantScreen = () => {
-
+const RestaurantScreen = ({ navigation }) => {
   const [selectedCuisine, setSelectedCuisine] = useState(null);
 
+  const BookResturant = (BookResturant) => {
+    navigation.navigate("BookResturant", BookResturant);
+  };
   const toggleCuisineFilter = (cuisine) => {
     setSelectedCuisine(cuisine === selectedCuisine ? null : cuisine);
   };
@@ -50,11 +60,11 @@ const RestaurantScreen = () => {
     <View style={styles.restaurantItem}>
       <Image source={item.image} style={styles.restaurantImage} />
       <Text style={styles.restaurantName}>{item.name}</Text>
-      <TouchableOpacity onPress={() => navigateToBooking(item)}>
-          <View style={styles.button}>
-            <Text style={styles.buttonText}>Book</Text>
-          </View>
-        </TouchableOpacity>
+      <TouchableOpacity onPress={() => BookResturant(item)}>
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>Book</Text>
+        </View>
+      </TouchableOpacity>
       <Text style={styles.restaurantCuisine}>{item.cuisine}</Text>
       <Text style={styles.restaurantLocation}>{item.location}</Text>
       <Text style={styles.restaurantRating}>{`Rating: ${item.rating}`}</Text>
@@ -63,20 +73,20 @@ const RestaurantScreen = () => {
 
   return (
     <ScrollView>
-    <View>
-    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-    <View style={styles.filtersContainer}>
-        {cuisineFilters.map(renderCuisineFilter)}
+      <View>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <View style={styles.filtersContainer}>
+            {cuisineFilters.map(renderCuisineFilter)}
+          </View>
+        </ScrollView>
+        <FlatList
+          data={dummyRestaurantsData.filter((restaurant) =>
+            selectedCuisine ? restaurant.cuisine === selectedCuisine : true
+          )}
+          keyExtractor={(item) => item.id}
+          renderItem={renderRestaurantItem}
+        />
       </View>
-      </ScrollView>
-      <FlatList
-        data={dummyRestaurantsData.filter((restaurant) =>
-          selectedCuisine ? restaurant.cuisine === selectedCuisine : true
-        )}
-        keyExtractor={(item) => item.id}
-        renderItem={renderRestaurantItem}
-      />
-    </View>
     </ScrollView>
   );
 };
@@ -85,17 +95,17 @@ const styles = StyleSheet.create({
   restaurantItem: {
     margin: 16,
     borderRadius: 8,
-    overflow: 'hidden',
-    backgroundColor: '#f5f5f5',
+    overflow: "hidden",
+    backgroundColor: "#f5f5f5",
   },
   restaurantImage: {
-    width: '100%',
+    width: "100%",
     height: 200,
-    resizeMode: 'cover',
+    resizeMode: "cover",
   },
   restaurantName: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     margin: 8,
   },
   restaurantCuisine: {
@@ -108,44 +118,44 @@ const styles = StyleSheet.create({
   },
   restaurantRating: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginHorizontal: 8,
     marginBottom: 8,
   },
   filtersContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
     marginVertical: 8,
   },
   filterLabel: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginRight: 8,
   },
   filterButton: {
     paddingHorizontal: 16,
     paddingVertical: 8,
     borderRadius: 8,
-    backgroundColor: '#3498db',
+    backgroundColor: "#3498db",
     marginHorizontal: 8,
     marginVertical: 8,
   },
   selectedFilterButton: {
-    backgroundColor: '#2980b9',
+    backgroundColor: "#2980b9",
   },
   filterButtonText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   button: {
-    backgroundColor: '#3498db',
+    backgroundColor: "#3498db",
     padding: 10,
     borderRadius: 5,
   },
   buttonText: {
-    color: 'white',
-    fontWeight: 'bold',
+    color: "white",
+    fontWeight: "bold",
     // fontSize:15,
   },
 });
