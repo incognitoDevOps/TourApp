@@ -50,6 +50,11 @@ const RestaurantScreen = () => {
     <View style={styles.restaurantItem}>
       <Image source={item.image} style={styles.restaurantImage} />
       <Text style={styles.restaurantName}>{item.name}</Text>
+      <TouchableOpacity onPress={() => navigateToBooking(item)}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>Book</Text>
+          </View>
+        </TouchableOpacity>
       <Text style={styles.restaurantCuisine}>{item.cuisine}</Text>
       <Text style={styles.restaurantLocation}>{item.location}</Text>
       <Text style={styles.restaurantRating}>{`Rating: ${item.rating}`}</Text>
@@ -132,6 +137,16 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  button: {
+    backgroundColor: '#3498db',
+    padding: 10,
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    // fontSize:15,
   },
 });
 
