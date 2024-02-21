@@ -27,11 +27,9 @@ const dummyAccommodationsData = [
 
 const AccommodationScreen = ({ navigation }) => {
 
-  const navigateToBooking = (Booking) => {
-    navigation.navigate('Booking', Booking);
-  };
-  const BookAcomodation = (BookAcomodation) =>{
-    navigation.navigate('BookAcomodation', BookAcomodation)
+ 
+  const BookAccomodation = (BookAccomodation) =>{
+    navigation.navigate('BookAccomodation', BookAccomodation)
   }
 
   const [selectedAmenities, setSelectedAmenities] = useState([]);
@@ -64,7 +62,7 @@ const AccommodationScreen = ({ navigation }) => {
     <Image source={item.image} style={styles.accommodationImage} />
       <View style={styles.container}>
       <Text style={styles.accommodationName}>{item.name}</Text>
-      <TouchableOpacity onPress={() => BookAcomodation(item)}>
+      <TouchableOpacity onPress={() => BookAccomodation(item)}>
           <View style={styles.button}>
             <Text style={styles.buttonText}>Book</Text>
           </View>

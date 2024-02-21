@@ -1,8 +1,7 @@
-// BookingScreen.js
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image } from 'react-native';
 
-export default BookAcomodation = ({ route }) => {
+const BookAcomodation = ({ route }) => {
   const { name, image, price, location } = route.params;
   const [nameInput, setNameInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
@@ -102,3 +101,4 @@ const styles = StyleSheet.create({
   },
 });
 
+export default BookAcomodation;

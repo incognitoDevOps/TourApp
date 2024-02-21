@@ -12,7 +12,7 @@ import AttractionDetailsScreen from '../screens/AttractionDetailsScreen';
 import NewsDetails from '../screens/NewsDetails';
 import Booking from '../screens/Booking';
 import TrendingScreen from '../screens/TrendingScreen';
-import BookAcomodation from '../screens/BookAcomodation';
+import BookAcomodation from '../screens/BookAccomodation';
 
 const Stack = createStackNavigator();
 
