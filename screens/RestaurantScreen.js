@@ -59,12 +59,14 @@ const RestaurantScreen = ({ navigation }) => {
   const renderRestaurantItem = ({ item }) => (
     <View style={styles.restaurantItem}>
       <Image source={item.image} style={styles.restaurantImage} />
+      <View style={styles.container}>
       <Text style={styles.restaurantName}>{item.name}</Text>
       <TouchableOpacity onPress={() => BookResturant(item)}>
         <View style={styles.button}>
           <Text style={styles.buttonText}>Book</Text>
         </View>
       </TouchableOpacity>
+      </View>
       <Text style={styles.restaurantCuisine}>{item.cuisine}</Text>
       <Text style={styles.restaurantLocation}>{item.location}</Text>
       <Text style={styles.restaurantRating}>{`Rating: ${item.rating}`}</Text>
@@ -157,6 +159,13 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "bold",
     // fontSize:15,
+  },
+  container: {
+    flexDirection: 'row', 
+    justifyContent: 'space-between',  
+    alignItems: 'center',
+    marginTop: 5,
+    // padding: 10,
   },
 });
 
