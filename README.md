@@ -103,3 +103,17 @@ eas build -p android
 # Alt
  eas build:configure 
  eas build -p android --profile preview
+
+
+
+
+other usefull dependencies
+
+# installing packages
+
+npm install @react-navigation/native@latest @react-navigation/bottom-tabs@latest react-native-reanimated@latest react-native-gesture-handler@latest @react-navigation/stack@latest react-native-vector-icons@latest react-native-gesture-handler@latest react-native-reanimated@latest axios @react-navigation/native @react-navigation/stack
+
+# side bar
+npm install @react-navigation/drawer react-native-reanimated
+
+npm install react-native-chart-kit react-native-svg
