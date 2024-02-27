@@ -25,7 +25,7 @@ const AppNavigator = () => {
         <Stack.Screen name="Accommodation" component={AccommodationScreen} options={{headerShown: false}}/>
         <Stack.Screen name="Restaurant" component={RestaurantScreen} options={{headerShown: false}}/>
         <Stack.Screen name="Weather" component={WeatherScreen} options={{headerShown: false}}/>
-        <Stack.Screen name="AttractionDetails" component={AttractionDetailsScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="AttractionDetails" component={AttractionDetailsScreen} />
         <Stack.Screen name="NewsDetails" component={NewsDetails} options={{headerShown: false}}/>
         <Stack.Screen name="Booking" component={Booking} options={{headerShown: false}}/>
         <Stack.Screen name="TrendingScreen" component={TrendingScreen} options={{headerShown: false}}/>
