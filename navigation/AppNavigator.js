@@ -23,7 +23,7 @@ const AppNavigator = () => {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Attractions" component={AttractionsScreen} options={{headerShown: false}}/>
         <Stack.Screen name="Accommodation" component={AccommodationScreen} options={{headerShown: false}}/>
-        <Stack.Screen name="Restaurant" component={RestaurantScreen} options={{headerShown: true}}/>
+        <Stack.Screen name="Restaurant" component={RestaurantScreen} options={{headerShown: false}}/>
         <Stack.Screen name="Weather" component={WeatherScreen} options={{headerShown: true}}/>
         <Stack.Screen name="AttractionDetails" component={AttractionDetailsScreen} />
         <Stack.Screen name="NewsDetails" component={NewsDetails} options={{headerShown: false}}/>

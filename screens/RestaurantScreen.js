@@ -76,6 +76,10 @@ const RestaurantScreen = ({ navigation }) => {
   return (
     <ScrollView>
       <View>
+      <Image
+          source={require("../assets/attractions_header.jpeg")}
+          style={{ width: "100%", height: 200, resizeMode: "cover" }}
+        />
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <View style={styles.filtersContainer}>
             {cuisineFilters.map(renderCuisineFilter)}
