@@ -21,7 +21,7 @@ const AppNavigator = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Attractions" component={AttractionsScreen} />
+        <Stack.Screen name="Attractions" component={AttractionsScreen} options={{headerShown: false}}/>
         <Stack.Screen name="Accommodation" component={AccommodationScreen} />
         <Stack.Screen name="Restaurant" component={RestaurantScreen} />
         <Stack.Screen name="Weather" component={WeatherScreen} />
