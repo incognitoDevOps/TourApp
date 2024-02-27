@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, ImageBackground } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, ImageBackground,Image } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -35,7 +35,12 @@ const WeatherScreen = () => {
       source={require("../assets/weather.jpeg")}
         style={styles.backgroundImage}
       >
+        
           <ScrollView>
+          <Image
+          source={require("../assets/attractions_header.jpeg")}
+          style={{ width: "100%", height: 200, resizeMode: "cover" }}
+        />
 
         <View style={styles.container}>
           <Text style={styles.heading}>Weather Information</Text>
