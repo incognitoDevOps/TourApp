@@ -78,6 +78,10 @@ const AccommodationScreen = ({ navigation }) => {
   return (
     <ScrollView>
     <View>
+    <Image
+          source={require("../assets/attractions_header.jpeg")}
+          style={{ width: "100%", height: 200, resizeMode: "cover" }}
+        />
       <View style={styles.filtersContainer}>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {amenitiesFilters.map(renderAmenityFilter)}
